@@ -11,6 +11,16 @@ const BaggageSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    trip: {
+      type: Schema.Types.ObjectId,
+      ref: "Trip",
+      required: true,
+    }
   },
   {
     timestamps: true,
