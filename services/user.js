@@ -1,3 +1,4 @@
+import { NotFoundError } from '../errors/not-found.js';
 import User from '../models/user.js';
 
 export const create = async (data) => {
@@ -13,6 +14,7 @@ export const index = async () => {
 
 export const find = async (param, config) => {
     const user = await User.findOne(param, config);
+    if (!user) throw new NotFoundError ('User not found');
     return user;
 }
 

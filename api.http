@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3000
-
+@userId = 6a43af4f8958d43a98779fbe
 
 ### TEST API
 GET {{baseUrl}}
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "john.doe4@example.com",
+  "email": "john.doe394@example.com",
   "password": "test123"
 }
 
@@ -30,3 +30,15 @@ Content-Type: application/json
 
 ### DELETE USER BY ID
 DELETE {{baseUrl}}/users/{{userId}}
+
+### CREATE TRIP
+POST {{baseUrl}}/trips
+Content-Type: application/json
+{
+  "title": "Trip to the moon",
+  "startDate": "2025-3-12",
+  "endDate": "2026-1-12",
+  "budget": {
+    "total": 1000
+  },
+}
